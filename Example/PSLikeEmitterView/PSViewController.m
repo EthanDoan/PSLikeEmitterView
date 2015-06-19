@@ -7,12 +7,13 @@
 //
 
 #import "PSViewController.h"
+#import <PSLikeEmitterView/PSLikeEmitterView.h>
 
-@interface PSViewController ()
 
-@end
-
-@implementation PSViewController
+@implementation PSViewController{
+	__weak IBOutlet UICollectionView* _collectionView;
+	__weak IBOutlet PSLikeEmitterView* _emitter;
+}
 
 - (void)viewDidLoad
 {
@@ -20,10 +21,9 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(IBAction)onImageLongPress:(id)sender{
+	NSLog( @"longpress" );
+	_emitter.userInteractionEnabled = YES;
 }
 
 @end

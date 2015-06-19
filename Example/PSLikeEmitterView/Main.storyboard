@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aFH-TW-2Zo">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -14,14 +14,124 @@
                         <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2015-02-05 at 22.31.36.png" translatesAutoresizingMaskIntoConstraints="NO" id="Eaj-AD-ubW">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="GFA-KU-OPO" appends="YES" id="3Zs-th-AcQ"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7F-wa-OTn">
+                                <rect key="frame" x="137" y="269" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3GB-Y7-ceA" customClass="PSLikeEmitterView">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Eaj-AD-ubW" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" id="43P-Oe-PH8"/>
+                            <constraint firstItem="Eaj-AD-ubW" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="56f-or-rdM"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="Eaj-AD-ubW" secondAttribute="bottom" id="91n-ze-0pw"/>
+                            <constraint firstItem="3GB-Y7-ceA" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="Gu0-th-Jlh"/>
+                            <constraint firstItem="3GB-Y7-ceA" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" id="PqL-bX-Bve"/>
+                            <constraint firstAttribute="trailing" secondItem="Eaj-AD-ubW" secondAttribute="trailing" id="S7K-qn-gFa"/>
+                            <constraint firstAttribute="trailing" secondItem="3GB-Y7-ceA" secondAttribute="trailing" id="kmD-3a-9UA"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="3GB-Y7-ceA" secondAttribute="bottom" id="yjN-WH-UbE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="_emitter" destination="3GB-Y7-ceA" id="e0E-8J-twh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="GFA-KU-OPO">
+                    <connections>
+                        <action selector="onImageLongPress:" destination="whP-gf-Uak" id="BaS-B9-Wrc"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="305" y="433"/>
+            <point key="canvasLocation" x="162.66666666666666" y="409.90666666666664"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="VcW-KS-rI1">
+            <objects>
+                <viewController id="aFH-TW-2Zo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bQj-2Z-Um9"/>
+                        <viewControllerLayoutGuide type="bottom" id="eB7-pt-yFr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lNx-dY-BxS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aFE-lv-sk1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4sz-1m-jSw">
+                                    <size key="itemSize" width="280" height="488"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8pS-bh-exW">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="488"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2015-02-05 at 22.31.36.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dwq-kF-9LH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="488"/>
+                                                </imageView>
+                                                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3as-2k-vls" customClass="PSLikeEmitterView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="488"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Dwq-kF-9LH" firstAttribute="leading" secondItem="8pS-bh-exW" secondAttribute="leading" id="6f9-Qh-wnh"/>
+                                            <constraint firstAttribute="bottom" secondItem="3as-2k-vls" secondAttribute="bottom" id="Ela-La-jAN"/>
+                                            <constraint firstItem="Dwq-kF-9LH" firstAttribute="top" secondItem="8pS-bh-exW" secondAttribute="top" id="Gur-sx-tOH"/>
+                                            <constraint firstAttribute="trailing" secondItem="3as-2k-vls" secondAttribute="trailing" id="IEU-Ce-x4w"/>
+                                            <constraint firstAttribute="bottom" secondItem="Dwq-kF-9LH" secondAttribute="bottom" id="atn-nF-OHo"/>
+                                            <constraint firstAttribute="trailing" secondItem="Dwq-kF-9LH" secondAttribute="trailing" id="h7L-r5-E6I"/>
+                                            <constraint firstItem="3as-2k-vls" firstAttribute="leading" secondItem="8pS-bh-exW" secondAttribute="leading" id="iNZ-6L-s9k"/>
+                                            <constraint firstItem="3as-2k-vls" firstAttribute="top" secondItem="8pS-bh-exW" secondAttribute="top" id="wZ8-gF-sOM"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aFE-lv-sk1" secondAttribute="trailing" id="D2D-P2-xt5"/>
+                            <constraint firstItem="eB7-pt-yFr" firstAttribute="top" secondItem="aFE-lv-sk1" secondAttribute="bottom" id="Oor-1J-5wF"/>
+                            <constraint firstItem="aFE-lv-sk1" firstAttribute="leading" secondItem="lNx-dY-BxS" secondAttribute="leading" id="fB1-sd-xJT"/>
+                            <constraint firstItem="aFE-lv-sk1" firstAttribute="top" secondItem="lNx-dY-BxS" secondAttribute="top" id="nuh-ai-upg"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KFE-hu-oDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="593" y="409"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Screen Shot 2015-02-05 at 22.31.36.png" width="640" height="1136"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
