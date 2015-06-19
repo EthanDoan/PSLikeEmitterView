@@ -1,0 +1,14 @@
+PODS:
+  - PSLikeEmitterView (0.1.0)
+
+DEPENDENCIES:
+  - PSLikeEmitterView (from `../`)
+
+EXTERNAL SOURCES:
+  PSLikeEmitterView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  PSLikeEmitterView: 99161c06e920f5de859b3efe5100ad35879f6839
+
+COCOAPODS: 0.37.2
