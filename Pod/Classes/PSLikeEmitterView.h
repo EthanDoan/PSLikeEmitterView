@@ -10,4 +10,8 @@
 
 @interface PSLikeEmitterView : UIView
 
+@property UIImage* particle_img;
+
+-(void)playWithLog:(NSArray*)log;
+
 @end

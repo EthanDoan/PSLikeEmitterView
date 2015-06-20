@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4DDD4EE11B34373500240F24 /* Screen Shot 2015-02-05 at 22.31.36.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDD4EE01B34373500240F24 /* Screen Shot 2015-02-05 at 22.31.36.png */; };
 		4DFA807D1B3563380059DFD3 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA807C1B3563380059DFD3 /* MyCell.m */; };
+		4DFA807F1B3564E10059DFD3 /* particle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA807E1B3564E10059DFD3 /* particle@2x.png */; };
+		4DFA80811B3565F20059DFD3 /* heart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA80801B3565F20059DFD3 /* heart@2x.png */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -43,6 +45,8 @@
 		4DDD4EE01B34373500240F24 /* Screen Shot 2015-02-05 at 22.31.36.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2015-02-05 at 22.31.36.png"; sourceTree = "<group>"; };
 		4DFA807B1B3563380059DFD3 /* MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
 		4DFA807C1B3563380059DFD3 /* MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
+		4DFA807E1B3564E10059DFD3 /* particle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "particle@2x.png"; sourceTree = "<group>"; };
+		4DFA80801B3565F20059DFD3 /* heart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart@2x.png"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* PSLikeEmitterView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSLikeEmitterView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,16 +139,18 @@
 		6003F593195388D20070C39A /* Example for PSLikeEmitterView */ = {
 			isa = PBXGroup;
 			children = (
+				4DFA80801B3565F20059DFD3 /* heart@2x.png */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				4DFA807B1B3563380059DFD3 /* MyCell.h */,
+				4DFA807C1B3563380059DFD3 /* MyCell.m */,
+				4DFA807E1B3564E10059DFD3 /* particle@2x.png */,
 				6003F59C195388D20070C39A /* PSAppDelegate.h */,
 				6003F59D195388D20070C39A /* PSAppDelegate.m */,
 				6003F5A5195388D20070C39A /* PSViewController.h */,
 				6003F5A6195388D20070C39A /* PSViewController.m */,
 				4DDD4EE01B34373500240F24 /* Screen Shot 2015-02-05 at 22.31.36.png */,
 				6003F594195388D20070C39A /* Supporting Files */,
-				4DFA807B1B3563380059DFD3 /* MyCell.h */,
-				4DFA807C1B3563380059DFD3 /* MyCell.m */,
 			);
 			name = "Example for PSLikeEmitterView";
 			path = PSLikeEmitterView;
@@ -284,9 +290,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DFA80811B3565F20059DFD3 /* heart@2x.png in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				4DDD4EE11B34373500240F24 /* Screen Shot 2015-02-05 at 22.31.36.png in Resources */,
+				4DFA807F1B3564E10059DFD3 /* particle@2x.png in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

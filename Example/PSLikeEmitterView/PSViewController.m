@@ -12,7 +12,6 @@
 
 @implementation PSViewController{
 	__weak IBOutlet UICollectionView* _collectionView;
-	__weak IBOutlet PSLikeEmitterView* _emitter;
 }
 
 - (void)viewDidLoad
@@ -21,10 +20,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
--(IBAction)onImageLongPress:(id)sender{
-	NSLog( @"longpress" );
-	_emitter.userInteractionEnabled = YES;
-}
+
 
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
