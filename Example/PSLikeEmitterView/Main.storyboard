@@ -6,64 +6,9 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="wQg-tq-qST">
-            <objects>
-                <viewController id="whP-gf-Uak" customClass="PSViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
-                        <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2015-02-05 at 22.31.36.png" translatesAutoresizingMaskIntoConstraints="NO" id="Eaj-AD-ubW">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="GFA-KU-OPO" appends="YES" id="3Zs-th-AcQ"/>
-                                </connections>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7F-wa-OTn">
-                                <rect key="frame" x="137" y="269" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3GB-Y7-ceA" customClass="PSLikeEmitterView">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Eaj-AD-ubW" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" id="43P-Oe-PH8"/>
-                            <constraint firstItem="Eaj-AD-ubW" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="56f-or-rdM"/>
-                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="Eaj-AD-ubW" secondAttribute="bottom" id="91n-ze-0pw"/>
-                            <constraint firstItem="3GB-Y7-ceA" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="Gu0-th-Jlh"/>
-                            <constraint firstItem="3GB-Y7-ceA" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" id="PqL-bX-Bve"/>
-                            <constraint firstAttribute="trailing" secondItem="Eaj-AD-ubW" secondAttribute="trailing" id="S7K-qn-gFa"/>
-                            <constraint firstAttribute="trailing" secondItem="3GB-Y7-ceA" secondAttribute="trailing" id="kmD-3a-9UA"/>
-                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="3GB-Y7-ceA" secondAttribute="bottom" id="yjN-WH-UbE"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="_emitter" destination="3GB-Y7-ceA" id="e0E-8J-twh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="GFA-KU-OPO">
-                    <connections>
-                        <action selector="onImageLongPress:" destination="whP-gf-Uak" id="BaS-B9-Wrc"/>
-                    </connections>
-                </pongPressGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="162.66666666666666" y="409.90666666666664"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="VcW-KS-rI1">
             <objects>
-                <viewController id="aFH-TW-2Zo" sceneMemberID="viewController">
+                <viewController id="aFH-TW-2Zo" customClass="PSViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bQj-2Z-Um9"/>
                         <viewControllerLayoutGuide type="bottom" id="eB7-pt-yFr"/>
@@ -72,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aFE-lv-sk1">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aFE-lv-sk1">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4sz-1m-jSw">
                                     <size key="itemSize" width="280" height="488"/>
@@ -81,7 +26,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8pS-bh-exW">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="8pS-bh-exW">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -110,6 +55,10 @@
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="aFH-TW-2Zo" id="T1r-N9-rmG"/>
+                                    <outlet property="delegate" destination="aFH-TW-2Zo" id="5NQ-hA-5CS"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -120,6 +69,9 @@
                             <constraint firstItem="aFE-lv-sk1" firstAttribute="top" secondItem="lNx-dY-BxS" secondAttribute="top" id="nuh-ai-upg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="_collectionView" destination="aFE-lv-sk1" id="Hug-BA-GTY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFE-hu-oDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface PSViewController : UIViewController
+@interface PSViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end
