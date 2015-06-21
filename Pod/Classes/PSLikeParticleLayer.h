@@ -10,4 +10,8 @@
 
 @interface PSLikeParticleLayer : CALayer
 
+@property NSInteger lifeSpan;// 寿命
+
+-(void)startAnimation;
+
 @end

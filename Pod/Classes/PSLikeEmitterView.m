@@ -31,7 +31,7 @@
 	layer.contents = (__bridge id)(_particle_img.CGImage);
 	[self.layer addSublayer:layer];
 	layer.position = CGPointMake(200, 200);
-	
+	[layer startAnimation];
 }
 
 
