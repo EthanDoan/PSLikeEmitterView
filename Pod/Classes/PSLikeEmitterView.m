@@ -1,11 +1,3 @@
-//
-//  PSLikeEmitterView.m
-//  Pods
-//
-//  Created by noughts on 2015/06/19.
-//
-//
-
 #import "PSLikeEmitterView.h"
 #import "PSLikeParticleView.h"
 
@@ -25,11 +17,17 @@
 	for (NSValue* val in log) {
 		CGPoint point = [val CGPointValue];
 	}
+	[self emittAtPoint:CGPointMake(200, 200)];
+}
+
+
+// CALayerは暗黙的アニメーションの管理が面倒なのでUIViewを使っています。
+-(void)emittAtPoint:(CGPoint)point{
 	PSLikeParticleView* particle = [[PSLikeParticleView alloc] init];
 	particle.frame = (CGRect){.size=_particle_img.size};
 	particle.layer.contents = (__bridge id)(_particle_img.CGImage);
 	[self addSubview:particle];
-	particle.center = CGPointMake(200, 200);
+	particle.center = point;
 	[particle startAnimation];
 }
 
