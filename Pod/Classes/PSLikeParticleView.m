@@ -28,12 +28,12 @@
 
 
 -(void)update:(CADisplayLink*)link{
-	self.y -= 1;
+	self.centerY -= 2;
 	CGFloat progress = _age / (CGFloat)_lifeSpan;
 	self.alpha = 1- progress;
 	
-//	self.rotation+=1;
-	NSLog( @"%@", @(self.rotation) );
+
+	self.rotation = sinf(_age/10.0) * 10.0;
 	
 
 	_age++;
