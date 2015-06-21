@@ -7,8 +7,8 @@
 //
 
 #import "PSLikeParticleView.h"
-#import <FrameAccessor.h>
 #import "UIView+DisplayObject.h"
+#import <FrameAccessor.h>
 
 @implementation PSLikeParticleView{
 	NSInteger _age;// 現在の年齢
@@ -21,15 +21,20 @@
 	
 	CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
 	[link addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+	
+	self.rotation = 10;
+
 }
 
 
 -(void)update:(CADisplayLink*)link{
-	self.y -= 0;
+	self.y -= 1;
 	CGFloat progress = _age / (CGFloat)_lifeSpan;
 	self.alpha = 1- progress;
 	
-	self.rotation = 10;
+//	self.rotation+=1;
+	NSLog( @"%@", @(self.rotation) );
+	
 
 	_age++;
 	if( _age > _lifeSpan){

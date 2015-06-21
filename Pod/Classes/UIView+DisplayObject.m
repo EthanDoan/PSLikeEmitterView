@@ -10,6 +10,12 @@
 
 @implementation UIView (DisplayObject)
 
+-(void)render{
+	
+}
+
+
+
 -(CGFloat)rotation{
 	CGFloat radians = atan2f(self.transform.b, self.transform.a);
 	CGFloat degrees = radians * (180 / M_PI);
@@ -19,7 +25,6 @@
 -(void)setRotation:(CGFloat)rotation{
 	CGFloat angle = rotation * M_PI / 180.0;
 	self.transform = CGAffineTransformMakeRotation(angle);
-	NSLog( @"%@", NSStringFromCGAffineTransform(self.transform) );
 }
 
 @end
