@@ -7,7 +7,7 @@
 //
 
 #import "PSLikeEmitterView.h"
-#import "PSLikeParticleLayer.h"
+#import "PSLikeParticleView.h"
 
 @implementation PSLikeEmitterView
 
@@ -25,13 +25,12 @@
 	for (NSValue* val in log) {
 		CGPoint point = [val CGPointValue];
 	}
-	
-	PSLikeParticleLayer* layer = [[PSLikeParticleLayer alloc] init];
-	layer.frame = (CGRect){.size=_particle_img.size};
-	layer.contents = (__bridge id)(_particle_img.CGImage);
-	[self.layer addSublayer:layer];
-	layer.position = CGPointMake(200, 200);
-	[layer startAnimation];
+	PSLikeParticleView* particle = [[PSLikeParticleView alloc] init];
+	particle.frame = (CGRect){.size=_particle_img.size};
+	particle.layer.contents = (__bridge id)(_particle_img.CGImage);
+	[self addSubview:particle];
+	particle.center = CGPointMake(200, 200);
+	[particle startAnimation];
 }
 
 
