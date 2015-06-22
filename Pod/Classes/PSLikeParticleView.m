@@ -43,10 +43,8 @@
 	CGFloat progress = _age / (CGFloat)_lifeSpan;
 	self.alpha = 1- progress;
 	
-
 	self.rotation = sinf((_age+_shakeStartPoint)/_shakeSpeed) * _shakeSpeed;
 	
-
 	_age++;
 	if( _age > _lifeSpan){
 		[link invalidate];
