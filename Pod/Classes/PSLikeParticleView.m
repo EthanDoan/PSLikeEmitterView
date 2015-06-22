@@ -32,9 +32,20 @@
 	
 	CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
 	[link addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
-	
-	self.rotation = 10;
+	[self update:nil];
+	[self popInAnime:0];
 
+}
+
+
+/// ポップして表示アニメ
+-(void)popInAnime:(float)delay{
+	self.transform = CGAffineTransformMakeScale(0,0);
+	[UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1 options:0 animations:^{
+		self.transform = CGAffineTransformMakeScale(1.0, 1.0);
+	} completion:^(BOOL finished) {
+		
+	}];
 }
 
 
