@@ -39,12 +39,16 @@
 
 
 -(void)update:(CADisplayLink*)link{
-	self.centerY -= _speed;
+	
 	CGFloat progress = _age / (CGFloat)_lifeSpan;
 	self.alpha = 1- progress;
 	
 	self.rotation = sinf((_age+_shakeStartPoint)/_shakeSpeed) * 10;
 
+	CGFloat x = sinf(self.rotation * M_PI / 180);
+	CGFloat y = cosf(self.rotation * M_PI / 180);
+	self.centerY -= y * 2;
+	self.centerX += x;
 	
 	_age++;
 	if( _age > _lifeSpan){
