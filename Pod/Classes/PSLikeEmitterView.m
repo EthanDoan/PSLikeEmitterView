@@ -1,7 +1,9 @@
 #import "PSLikeEmitterView.h"
 #import "PSLikeParticleView.h"
 
-@implementation PSLikeEmitterView
+@implementation PSLikeEmitterView{
+	NSInteger _counter;
+}
 
 -(void)awakeFromNib{
 	[super awakeFromNib];
@@ -17,8 +19,22 @@
 	for (NSValue* val in log) {
 		CGPoint point = [val CGPointValue];
 	}
-	[self emittAtPoint:CGPointMake(200, 200)];
+	
+	CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
+	[link addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
+
+
+-(void)update:(CADisplayLink*)link{
+	if( _counter % 8 == 0 ){
+		[self emittAtPoint:CGPointMake(200, 200)];
+	}
+	_counter++;
+	if( _counter == 1000 ){
+		[link invalidate];
+	}
+}
+
 
 
 // CALayerは暗黙的アニメーションの管理が面倒なのでUIViewを使っています。

@@ -19,16 +19,12 @@
 
 -(void)startAnimation{
 	if( _lifeSpan == 0 ){
-		_lifeSpan = 50;
+		_lifeSpan = [self randWithMin:50 max:70];
 	}
 	
 	_speed = [self randWithMin:1 max:2];
 	_shakeSpeed = [self randWithMin:10 max:20];
 	_shakeStartPoint = [self randWithMin:0 max:100];
-	
-//	for (int i=0; i<100; i++) {
-//		NSLog( @"%@", @([self randWithMin:0 max:1]) );
-//	}
 	
 	CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
 	[link addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
@@ -54,12 +50,12 @@
 	CGFloat progress = _age / (CGFloat)_lifeSpan;
 	self.alpha = 1- progress;
 	
-	self.rotation = sinf((_age+_shakeStartPoint)/_shakeSpeed) * 10;
+	self.rotation = sinf((_age+_shakeStartPoint)/_shakeSpeed) * 15;
 
 	CGFloat x = sinf(self.rotation * M_PI / 180);
 	CGFloat y = cosf(self.rotation * M_PI / 180);
 	self.centerY -= y * 2;
-	self.centerX += x;
+	self.centerX += x *(_age/10);
 	
 	_age++;
 	if( _age > _lifeSpan){
